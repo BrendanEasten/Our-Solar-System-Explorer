@@ -1,0 +1,304 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: "Space Mono", monospace;
+    background-color: #000000;
+    background: radial-gradient(circle, #000000 20%, #0a0a2a 100%);
+    color: white;
+    text-align: center;
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+        url('2k_stars_milky_way.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.title {
+    font-family: 'Space Mono', monospace;
+    font-size: 3rem;
+    color: #a9ffff;
+    text-shadow: 0 0 8px #232a85, 0 0 15px #060e30, 0 0 30px rgba(173, 216, 230, 0.8);
+    letter-spacing: 1.5px;
+    margin-top: 20px;
+}
+
+.subtitle {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.5rem;
+    color: #ecf0f1; 
+    margin-top: 10px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.container {
+    margin: 20px;
+}
+.solar-system {
+    position: relative;
+    width: 85vw; 
+    height: 85vw; 
+    max-width: 520px; 
+    max-height: 520px;
+    margin: 50px auto;
+    border: 1px dashed rgb(155, 182, 255);
+    border-radius: 50%;
+}
+
+/* Planet styles */
+.planet {
+    position: absolute;
+    border-radius: 50%;
+    cursor: pointer;
+    animation: orbit 60s linear infinite; 
+    transition: transform 0.2s ease-in-out;
+}
+
+.planet:hover {
+    transform: scale(1.2); 
+}
+
+/* Orbit animation - slower and tighter */
+@keyframes orbit {
+    from {
+        transform: rotate(0deg) translateX(100px) rotate(0deg); /* Fixed orbit radius */
+    }
+    to {
+        transform: rotate(360deg) translateX(100px) rotate(-360deg); /* Fixed orbit radius */
+    }
+}
+
+/* Mercury */
+
+.mercury {
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #7e7e7e 10%, #4d4d4d 70%);
+    position: absolute;
+    top: 38%;
+    left: 65%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Venus */
+.venus {
+    width: 28px;
+    height: 28px;
+    background: radial-gradient(circle, #ffcc00 30%, #e68a00 70%);
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Earth with Green for land */
+.earth {
+    width: 32px;
+    height: 32px;
+    background: radial-gradient(circle, #1ef8ff 35%, #0077ff 70%); /* Blue oceans */
+    position: absolute;
+    top: 60%;
+    left: 60%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5); 
+    position: relative; 
+}
+
+/* Add green landmasses */
+.earth::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 40%, #28a745 15%, transparent 30%),
+                radial-gradient(circle at 70% 60%, #28a745 10%, transparent 25%),
+                radial-gradient(circle at 50% 80%, #28a745 8%, transparent 20%);
+    border-radius: 50%; /* Keeps the landmasses within the globe shape */
+    top: 0;
+    left: 0;
+    z-index: 1; /*overlays the base globe */
+    pointer-events: none; 
+}
+
+/* Mars */
+.mars {
+    width: 24px;
+    height: 24px;
+    background: radial-gradient(circle, #b33b3b 30%, #7a2b2b 80%);
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Jupiter*/
+.jupiter {
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, #e89a62 40%, #ac582f 70%);
+    background-image: repeating-linear-gradient(45deg, #fff, #fff 10px, #e89a62 10px, #e89a62 20px);
+    position: absolute;
+    top: 55%;
+    left: 30%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Saturn*/
+.saturn {
+    width: 44px;
+    height: 44px;
+    background: #d29a5a;
+    position: absolute;
+    top: 35%;
+    left: 20%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    position: relative; /*for the ring's positioning */
+}
+
+/* Saturn ring  */
+.saturn::before {
+    content: "";
+    position: absolute;
+    width: 70px; /* Width of the ring */
+    height: 12px; /* Thickness of the ring */
+    background: linear-gradient(to right, #d29a5a, #e6c4a8, #d29a5a); 
+    border-radius: 50%; /* Makes the ring an oval */
+    top: 50%; /* Centers the ring vertically */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Place behind the planet */
+}
+
+/* Uranus */
+.uranus {
+    width: 36px;
+    height: 36px;
+    background: radial-gradient(circle, #8ac9db 40%, #6fadc1 80%);
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Neptune */
+.neptune {
+    width: 34px;
+    height: 34px;
+    background: radial-gradient(circle, #354f73 40%, #263d58 80%);
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Hover effects for all planets */
+.mercury:hover {
+    transform: scale(1.5);
+    box-shadow: 0 0 25px #00f;
+}
+
+.venus:hover {
+    transform: scale(1.5);
+    box-shadow: 0 0 25px #00f;
+}
+
+.earth:hover {
+    transform: scale(1.5);
+    box-shadow: 0 0 25px #00f;
+}
+
+.mars:hover {
+    transform: scale(1.5);
+    box-shadow: 0 0 25px #00f;
+}
+
+.jupiter:hover {
+    transform: scale(1.5);
+    box-shadow: 0 0 25px #00f;
+}
+
+.saturn:hover {
+    transform: scale(1.5);
+    box-shadow: 0 0 25px #00f;
+}
+
+.uranus:hover {
+    transform: scale(1.5);
+    box-shadow: 0 0 25px #00f;
+}
+
+.neptune:hover {
+    transform: scale(1.5);
+    box-shadow: 0 0 25px #00f;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #0a0a0a, #000000);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 90%; 
+    max-height: 80vh; 
+    overflow-y: auto; 
+    text-align: left;
+    color: #e0e0e0; 
+    box-shadow: 0 4px 20px rgba(144, 104, 255, 0.6), 0 0 15px rgba(78, 214, 255, 0.8); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.modal-content h2 {
+    color: #a9eaff; 
+    text-shadow: 0 0 10px #00aaff, 0 0 25px #00bfff, 0 0 40px rgba(173, 216, 230, 0.9); 
+    font-family: "Space Mono", monospace;
+    font-size: 1.5em; 
+    margin-bottom: 15px; 
+    letter-spacing: 0.5px; 
+}
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Tooltip styles */
+.tooltip {
+    position: absolute;
+    display: none;
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.footer {
+    font-size: smaller;
+}
