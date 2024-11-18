@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Solar System Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abel&family=Alumni+Sans+Pinstripe:ital@0;1&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DynaPuff:wght@400..700&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Raleway:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+<section>
+    <div class="container">
+        <h1 class="title">Solar System Explorer</h1>
+        <p class="subtitle">Click on a planet to view its live stats!</p>
+        <br>
+        <br>
+        <div class="solar-system">
+            <div id="mercury" class="planet mercury" data-planet="Mercury"></div>
+            <div id="venus" class="planet venus" data-planet="Venus"></div>
+            <div id="earth" class="planet earth" data-planet="Earth"></div>
+            <div id="mars" class="planet mars" data-planet="Mars"></div>
+            <div id="jupiter" class="planet jupiter" data-planet="Jupiter"></div>
+            <div id="saturn" class="planet saturn" data-planet="Saturn"></div>
+            <div id="uranus" class="planet uranus" data-planet="Uranus"></div>
+            <div id="neptune" class="planet neptune" data-planet="Neptune"></div>
+        </div>
+    </div>
+</section>
+<section>
+    <div id="tooltip" class="tooltip"></div>
+</section>
+<section>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <h2 id="planet-name">Planet Name</h2>
+            <div id="stats">Stats will appear here.</div>
+        </div>
+    </div>
+</section>
+    <br>
+    <br>
+    <footer>
+        <p class="footer">&copy; 2024 Brendan.D ┃ Contact me @ N01279862@humbermail.ca</p>
+    </footer>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
